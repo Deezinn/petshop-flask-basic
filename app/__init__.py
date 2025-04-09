@@ -5,8 +5,7 @@ from .serializer import configure as config_ma
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/pets.db'
-
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pets.db'
     config_db(app)
     config_ma(app)
 
