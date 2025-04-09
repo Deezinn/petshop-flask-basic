@@ -1,12 +1,11 @@
-from flask_marshmallow import Marshmallow
-from .model import Pet
+from marshmallow import Schema, fields
 
-ma = Marshmallow()
+# Schema para Pet
+class PetSchema(Schema):
+    id = fields.Int(dump_only=True)
+    nome_pet = fields.Str(required=True)
+    nome_propietario = fields.Str(required=True)
 
+# Função de configuração do serializador
 def configure(app):
-    ma.init_app(app)
-
-class PetSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = Pet
-        load_instance = True  
+    pass  # Sem configurações adicionais, mas você pode incluir se necessário
