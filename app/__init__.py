@@ -13,7 +13,7 @@ def create_app():
 
     @app.route("/")
     def index():
-        return "André Lindo"
+        return "André Lindo s2 s2"
 
     from .pets import bp_pet
     app.register_blueprint(bp_pet)
