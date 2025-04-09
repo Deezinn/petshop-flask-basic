@@ -11,6 +11,11 @@ def create_app():
     config_ma(app)
 
     Migrate(app, app.db)
+
+    @app.route("/")
+    def index():
+        return "API Flask está rodando na Azure! 🐍"
+
     from .pets import bp_pet
     app.register_blueprint(bp_pet)
     return app
