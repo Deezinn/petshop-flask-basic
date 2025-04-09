@@ -2,10 +2,12 @@ from flask import Flask
 from flask_migrate import Migrate
 from .model import configure as config_db
 from .serializer import configure as config_ma
+import os
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pets.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.getenv('DATABASE_URL', 'pets.db')}"
+
     config_db(app)
     config_ma(app)
 
