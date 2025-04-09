@@ -11,7 +11,7 @@ pets_schema = PetSchema(many=True)
 def cadastrar_pet():
     data = request.json
     novo_pet = Pet(**data)
-
+    print("")
     from .model import db
     db.session.add(novo_pet)
     db.session.commit()
