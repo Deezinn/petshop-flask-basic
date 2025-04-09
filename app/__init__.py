@@ -14,7 +14,7 @@ def create_app():
 
     @app.route("/")
     def index():
-        return "API Flask está rodando na Azure! 🐍 CRUD de um petshop"
+        return "André Lindo"
 
     from .pets import bp_pet
     app.register_blueprint(bp_pet)
